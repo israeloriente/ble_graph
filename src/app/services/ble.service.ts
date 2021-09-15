@@ -47,6 +47,7 @@ export class BleService {
     //TODO: delete me. test purpose
     setTimeout(() => {
       let mock:BleDevice = this.getMockDevice();
+      console.log(mock);
       let advOfMockDevice= {name: mock.name, id: mock.id, advertising: mock.advertising, rssi: mock.rssi };
       this.listSubject.value.push(mock);
 
@@ -65,6 +66,7 @@ export class BleService {
   }
 
   private onDeviceDiscovered(device) {
+    console.log(device);
     this.ngZone.run(() => {
       this.listSubject.value.push(device);  
       this.listSubject.next(this.listSubject.value);

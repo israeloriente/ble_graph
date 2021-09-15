@@ -21,6 +21,7 @@ export class BluetoothPage implements OnInit {
   }
 
   ngOnInit() {
+    this.scan();
   }
 
   scan() {
